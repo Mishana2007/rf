@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мир Яхт - Роскошный отдых на воде</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        /* Хедер и навигация */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            margin-left: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: #4dc7ff;
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Мобильное меню */
+        @media screen and (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+                animation: slideDown 0.3s ease forwards;
+            }
+            
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+        
+        /* Баннер */
+        .banner {
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/api/placeholder/1200/500') center/cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .banner h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .banner p {
+            font-size: 20px;
+            max-width: 700px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #0088cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #006699;
+        }
+        
+        /* Секция о яхтах */
+        .yacht-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #003366;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .yacht-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .yacht-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .yacht-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .yacht-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .yacht-card-content {
+            padding: 20px;
+        }
+        
+        .yacht-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #003366;
+        }
+        
+        .yacht-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .yacht-features {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .yacht-feature {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            color: #666;
+        }
+        
+        .yacht-feature i {
+            margin-right: 5px;
+            color: #0088cc;
+        }
+        
+        .yacht-price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #0088cc;
+        }
+        
+        /* Подвал */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #0088cc;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .social-links li {
+            margin-right: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #0088cc;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: #ccc;
+        }
+        
+        /* Адаптивная верстка */
+        @media screen and (max-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #003366;
+                z-index: 100;
+                padding: 15px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+                border-radius: 0 0 8px 8px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 15px;
+                padding: 8px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            nav ul li:last-child {
+                margin-bottom: 0;
+                border-bottom: none;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 8px 10px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                font-size: 28px;
+                padding: 5px 10px;
+            }
+            
+            .banner {
+                height: 400px;
+            }
+            
+            .banner h1 {
+                font-size: 32px;
+            }
+            
+            .banner p {
+                font-size: 16px;
+            }
+            
+            .yacht-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .banner h1 {
+                font-size: 28px;
+            }
+            
+            .banner p {
+                font-size: 14px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Хедер с меню -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    ⚓ <span>Мир Яхт</span>
+                </div>
+                <div class="mobile-menu-btn">☰</div>
+                <nav>
+                    <ul>
+                        <li><a href="#top" class="active">Главная</a></li>
+                        <li><a href="#yacht-catalog">Каталог яхт</a></li>
+                        <li><a href="#rental">Аренда</a></li>
+                        <li><a href="#routes">Маршруты</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Баннер -->
+    <section class="banner">
+        <h1>Откройте для себя мир роскошных яхт</h1>
+        <p>Насладитесь незабываемым отдыхом на воде на одной из наших премиальных яхт. Исключительный комфорт и впечатления, которые останутся с вами навсегда.</p>
+        <a href="#" class="btn">Подобрать яхту</a>
+    </section>
+    
+    <!-- Секция с яхтами -->
+    <section id="yacht-catalog" class="yacht-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши премиальные яхты</h2>
+                <p>Мы предлагаем широкий выбор роскошных яхт разных размеров и комплектаций для идеального отдыха на воде</p>
+            </div>
+            
+            <div class="yacht-cards">
+                <!-- Яхта 1 -->
+                <div class="yacht-card">
+                    <img src="/api/placeholder/400/200" alt="Яхта Azimut 60">
+                    <div class="yacht-card-content">
+                        <h3>Azimut 60</h3>
+                        <p>Элегантная моторная яхта с современным дизайном и превосходными характеристиками для комфортного плавания.</p>
+                        <div class="yacht-features">
+                            <div class="yacht-feature">
+                                <span>👥</span> 12 гостей
+                            </div>
+                            <div class="yacht-feature">
+                                <span>🛏️</span> 3 каюты
+                            </div>
+                            <div class="yacht-feature">
+                                <span>📏</span> 18.3 м
+                            </div>
+                        </div>
+                        <div class="yacht-price">от €5,500 / день</div>
+                    </div>
+                </div>
+                
+                <!-- Яхта 2 -->
+                <div class="yacht-card">
+                    <img src="/api/placeholder/400/200" alt="Яхта Sunseeker 76">
+                    <div class="yacht-card-content">
+                        <h3>Sunseeker 76</h3>
+                        <p>Роскошная яхта с просторной палубой, изысканным интерьером и высокопроизводительной силовой установкой.</p>
+                        <div class="yacht-features">
+                            <div class="yacht-feature">
+                                <span>👥</span> 14 гостей
+                            </div>
+                            <div class="yacht-feature">
+                                <span>🛏️</span> 4 каюты
+                            </div>
+                            <div class="yacht-feature">
+                                <span>📏</span> 23.1 м
+                            </div>
+                        </div>
+                        <div class="yacht-price">от €8,900 / день</div>
+                    </div>
+                </div>
+                
+                <!-- Яхта 3 -->
+                <div class="yacht-card">
+                    <img src="/api/placeholder/400/200" alt="Яхта Princess 85">
+                    <div class="yacht-card-content">
+                        <h3>Princess 85</h3>
+                        <p>Комфортабельная яхта с изысканным интерьером, спа-зоной и панорамными окнами для непревзойденного отдыха.</p>
+                        <div class="yacht-features">
+                            <div class="yacht-feature">
+                                <span>👥</span> 18 гостей
+                            </div>
+                            <div class="yacht-feature">
+                                <span>🛏️</span> 5 кают
+                            </div>
+                            <div class="yacht-feature">
+                                <span>📏</span> 26.8 м
+                            </div>
+                        </div>
+                        <div class="yacht-price">от €11,200 / день</div>
+                    </div>
+                </div>
+                
+                <!-- Яхта 4 -->
+                <div class="yacht-card">
+                    <img src="ECLIPSE.jpg" alt="Яхта Ferretti 850">
+                    <div class="yacht-card-content">
+                        <h3>Ferretti 850</h3>
+                        <p>Элегантная и просторная яхта идеально подходит для длительных круизов и развлечений на воде.</p>
+                        <div class="yacht-features">
+                            <div class="yacht-feature">
+                                <span>👥</span> 16 гостей
+                            </div>
+                            <div class="yacht-feature">
+                                <span>🛏️</span> 4 каюты
+                            </div>
+                            <div class="yacht-feature">
+                                <span>📏</span> 26.0 м
+                            </div>
+                        </div>
+                        <div class="yacht-price">от €9,800 / день</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Информация об аренде -->
+    <section id="rental" class="yacht-section" style="background-color: #f0f5f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Аренда яхт</h2>
+                <p>Организуйте незабываемый отдых на воде с семьей, друзьями или коллегами</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 50px;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="color: #003366; margin-bottom: 20px;">Причины выбрать нас</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                            <span style="color: #0088cc; margin-right: 10px; font-size: 20px;">✓</span>
+                            <span>Большой выбор яхт премиум-класса разных размеров</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                            <span style="color: #0088cc; margin-right: 10px; font-size: 20px;">✓</span>
+                            <span>Профессиональный экипаж и высокий уровень сервиса</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                            <span style="color: #0088cc; margin-right: 10px; font-size: 20px;">✓</span>
+                            <span>Индивидуальный подход к каждому клиенту</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                            <span style="color: #0088cc; margin-right: 10px; font-size: 20px;">✓</span>
+                            <span>Гибкие условия бронирования и отмены</span>
+                        </li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="color: #003366; margin-bottom: 20px;">Варианты аренды</h3>
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <h4 style="color: #0088cc; margin-bottom: 10px;">Почасовая аренда</h4>
+                        <p>Идеально подходит для коротких прогулок, фотосессий или деловых встреч.</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <h4 style="color: #0088cc; margin-bottom: 10px;">Дневная аренда</h4>
+                        <p>Отличный вариант для празднования особых событий или однодневного отдыха.</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <h4 style="color: #0088cc; margin-bottom: 10px;">Недельная аренда</h4>
+                        <p>Для полноценного морского путешествия с посещением нескольких направлений.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Маршруты -->
+    <section id="routes" class="yacht-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Популярные маршруты</h2>
+                <p>Исследуйте красивейшие места и наслаждайтесь неповторимыми видами с нашими проверенными маршрутами</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+                <!-- Маршрут 1 -->
+                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="height: 200px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                        <img src="ECLIPSE5.JPG" alt="Сочи - Абхазия" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 20px;">
+                        <h3 style="color: #003366; margin-bottom: 10px;">Сочи - Абхазия</h3>
+                        <p style="margin-bottom: 15px;">Живописный маршрут вдоль побережья Черного моря с посещением уютных бухт и красивых пляжей.</p>
+                        <p style="color: #0088cc; font-weight: bold;">7 дней • 300 морских миль</p>
+                    </div>
+                </div>
+                
+                <!-- Маршрут 2 -->
+                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="height: 200px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                        <img src="/api/placeholder/400/200" alt="Санкт-Петербург - Хельсинки" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 20px;">
+                        <h3 style="color: #003366; margin-bottom: 10px;">Санкт-Петербург - Хельсинки</h3>
+                        <p style="margin-bottom: 15px;">Увлекательное путешествие по Балтийскому морю с посещением островов и исторических городов.</p>
+                        <p style="color: #0088cc; font-weight: bold;">10 дней • 450 морских миль</p>
+                    </div>
+                </div>
+                
+                <!-- Маршрут 3 -->
+                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="height: 200px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                        <img src="/api/placeholder/400/200" alt="Владивосток - Острова" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 20px;">
+                        <h3 style="color: #003366; margin-bottom: 10px;">Владивосток - Острова</h3>
+                        <p style="margin-bottom: 15px;">Экзотический маршрут по Японскому морю с посещением диких пляжей и природных заповедников.</p>
+                        <p style="color: #0088cc; font-weight: bold;">14 дней • 600 морских миль</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- О нас -->
+    <section id="about" class="yacht-section" style="background-color: #f0f5f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>О компании Мир Яхт</h2>
+                <p>Более 18 лет мы делаем морской отдых доступным и комфортным для наших клиентов</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 50px; margin-top: 50px; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <p style="margin-bottom: 20px; line-height: 1.8;">Мир Яхт — ведущая компания по предоставлению премиальных яхт для аренды и покупки. Мы работаем с 2005 года и гарантируем высочайший уровень сервиса.</p>
+                    <p style="margin-bottom: 20px; line-height: 1.8;">Наша миссия — открыть для вас мир яхтинга и обеспечить незабываемые впечатления от отдыха на воде. Каждая яхта в нашем флоте проходит тщательную проверку и обслуживание для обеспечения безопасности и комфорта наших клиентов.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 30px;">
+                        <div style="text-align: center; min-width: 120px;">
+                            <span style="display: block; font-size: 42px; font-weight: bold; color: #0088cc;">18+</span>
+                            <span>лет опыта</span>
+                        </div>
+                        <div style="text-align: center; min-width: 120px;">
+                            <span style="display: block; font-size: 42px; font-weight: bold; color: #0088cc;">50+</span>
+                            <span>яхт в управлении</span>
+                        </div>
+                        <div style="text-align: center; min-width: 120px;">
+                            <span style="display: block; font-size: 42px; font-weight: bold; color: #0088cc;">5000+</span>
+                            <span>счастливых клиентов</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <img src="/api/placeholder/600/400" alt="Команда Мир Яхт" style="width: 100%; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Подвал сайта -->
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О компании</h3>
+                    <p>Мир Яхт — ведущая компания по предоставлению премиальных яхт для аренды и покупки. Мы работаем с 2005 года и гарантируем высочайший уровень сервиса.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p>📍 Москва, ул. Морская, 123</p>
+                    <p>📞 +7 (495) 123-45-67</p>
+                    <p>✉️ info@miryacht.ru</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Полезные ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Каталог яхт</a></li>
+                        <li><a href="#">Условия аренды</a></li>
+                        <li><a href="#">Маршруты путешествий</a></li>
+                        <li><a href="#">Часто задаваемые вопросы</a></li>
+                        <li><a href="#">Блог</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Мы в соцсетях</h3>
+                    <ul class="social-links">
+                        <li><a href="#">📱</a></li>
+                        <li><a href="#">📘</a></li>
+                        <li><a href="#">📸</a></li>
+                        <li><a href="#">🐦</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2025 Мир Яхт. Все права защищены.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Скрипт для мобильного меню
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+            
+            // Закрытие меню при клике на ссылку на мобильных
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        nav.classList.remove('active');
+                    }
+                    
+                    // Устанавливаем активный класс для выбранного пункта меню
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Добавление анимации при прокрутке для карточек яхт
+            const yachtCards = document.querySelectorAll('.yacht-card');
+            
+            function checkCards() {
+                const triggerBottom = window.innerHeight * 0.8;
+                
+                yachtCards.forEach(card => {
+                    const cardTop = card.getBoundingClientRect().top;
+                    
+                    if (cardTop < triggerBottom) {
+                        card.style.opacity = 1;
+                        card.style.transform = 'translateY(0)';
+                    } else {
+                        card.style.opacity = 0;
+                        card.style.transform = 'translateY(50px)';
+                    }
+                });
+            }
+            
+            // Установка начальных стилей для анимации
+            yachtCards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', checkCards);
+            checkCards(); // Проверить карточки при загрузке страницы
+            
+            // Плавный скролл для якорных ссылок
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Учитываем высоту меню
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Изменение меню при прокрутке
+            const header = document.querySelector('header');
+            let lastScrollY = 0;
+            
+            window.addEventListener('scroll', function() {
+                const scrollY = window.scrollY;
+                
+                // Добавляем тень и уменьшаем размер при прокрутке вниз
+                if (scrollY > 50) {
+                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+                    header.style.padding = '5px 0';
+                } else {
+                    header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+                    header.style.padding = '10px 0';
+                }
+                
+                // Скрываем меню при прокрутке вниз и показываем при прокрутке вверх на мобильных
+                if (window.innerWidth <= 768) {
+                    if (scrollY > lastScrollY && scrollY > 100) {
+                        header.style.transform = 'translateY(-100%)';
+                    } else {
+                        header.style.transform = 'translateY(0)';
+                    }
+                }
+                
+                lastScrollY = scrollY;
+            });
+            
+            // Добавляем плавное изменение стилей при прокрутке
+            header.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease';
+        });
+    </script>
+</body>
+</html>

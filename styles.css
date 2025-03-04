@@ -1,0 +1,1596 @@
+/* ✅ Подключаем премиальные шрифты */
+/* Импортируем только нужные шрифты */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap');
+
+/* ✅ Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Основной шрифт */
+}
+
+/* ✅ Заголовки, логотип */
+h1, h2, h3, .logo {
+    font-family: 'Raleway', sans-serif !important; /* Стандартный шрифт для заголовков */
+}
+
+/* ✅ Специальный стиль для h3[itemprop="name"] */
+h3[itemprop="name"] {
+    font-family: 'Roboto Slab', serif !important; /* Новый шрифт для лучшей читаемости */
+    font-weight: 700;
+    font-size: 22px; /* Чуть увеличил размер */
+    color: #222; /* Более контрастный цвет */
+    text-transform: uppercase; /* Чтобы смотрелось ровно */
+    letter-spacing: 0.5px; /* Улучшенная читаемость */
+}
+
+/* ✅ Общий стиль для h3 */
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+/* ✅ Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    h3[itemprop="name"] {
+        font-size: 18px; /* Чуть меньше на мобильных */
+    }
+}
+
+/* Цена */
+.catalog-price {
+    font-family: 'Lexend', sans-serif; /* Современный цифровой стиль */
+    font-weight: 700;
+    font-size: 24px;
+    color: #E63946; /* Красивый премиальный красный */
+}
+
+/* Основной текст */
+p, .description, .review-comment {
+    font-family: 'Poppins', sans-serif; /* Минималистичный и легко читаемый текст */
+    font-weight: 400;
+    font-size: 16px;
+    color: #3c3b3b;
+}
+
+/* Кнопки */
+.button, .btn-rent, .btn-details {
+    font-family: 'Lexend', sans-serif; /* Строгий, техно-шрифт для кнопок */
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+/* Логотип */
+.logo {
+    font-size: 38px;
+    font-family: 'Cinzel', serif;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+}
+
+.navbar {
+    position: fixed; /* Фиксируем в верхней части */
+    top: 0; /* Привязываем к самой верхушке */
+    left: 0;
+    width: 100%; /* Растягиваем по всей ширине */
+    background: rgba(255, 255, 255, 0.95); /* Прозрачность для лёгкости */
+    padding: 0.8rem 2rem; /* Уменьшили отступы, чтобы меню не занимало много места */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    z-index: 1000;
+    transition: top 0.3s ease-in-out; /* Плавный эффект скрытия */
+}
+
+/* Чтобы контент не перекрывался меню */
+body {
+    padding-top: 40px; /* Добавляем отступ сверху, равный высоте navbar */
+}
+
+/* Автоматическое скрытие при прокрутке вниз */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0.6rem 1.5rem; /* Уменьшаем отступы на мобильных */
+    }
+}
+
+
+
+
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: #4b5563;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #2563eb;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: #4b5563;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+    color: #2563eb;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #4b5563;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+.mobile-menu {
+right: -100%;
+max-width: 80%;
+height: auto;
+}
+
+.mobile-menu.active {
+right: 5%;
+}
+
+.mobile-menu-content a {
+font-size: 1.1rem;
+}
+}
+
+/* .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 999;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+} */
+
+/* .mobile-menu.active {
+    right: 0;
+} */
+
+/* Затемняющая подложка */
+.overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+backdrop-filter: blur(5px);
+z-index: 998;
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.3s ease;
+}
+
+
+/* Активное состояние подложки */
+.overlay.active {
+opacity: 1;
+visibility: visible;
+}
+
+/* Контейнер мобильного меню */
+.mobile-menu {
+position: fixed;
+top: 50%;
+right: -350px; /* Начальное положение за экраном */
+width: auto; /* Автоматическая ширина */
+max-width: 350px; /* Ограничение ширины */
+background: white;
+z-index: 999;
+transition: right 0.4s ease-in-out, transform 0.4s ease-in-out;
+box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+padding: 1.5rem;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+border-radius: 15px 0 0 15px; /* Закругленные углы слева */
+transform: translateY(-50%);
+}
+
+/* Активное состояние меню (выезжает) */
+.mobile-menu.active {
+right: 0;
+}
+
+/* Содержимое меню */
+.mobile-menu-content {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.mobile-menu-content a {
+display: block;
+color: #4b5563;
+font-size: 1.2rem;
+text-decoration: none;
+padding: 0.8rem 1rem;
+border-bottom: 1px solid #e5e7eb;
+transition: color 0.3s ease;
+}
+
+.mobile-menu-content a:hover {
+color: #2563eb;
+}
+
+/* Кнопка закрытия меню */
+.close-menu {
+position: absolute;
+top: 10px;
+right: 10px;
+background: none;
+border: none;
+font-size: 24px;
+cursor: pointer;
+color: #4b5563;
+transition: color 0.3s ease;
+}
+
+.close-menu:hover {
+color: #2563eb;
+}
+
+/* Кнопка открытия меню */
+.menu-button {
+position: fixed;
+top: 20px;
+right: 20px;
+background: none;
+border: none;
+font-size: 24px;
+cursor: pointer;
+z-index: 1000;
+}
+
+/* Основной стиль секции */
+/* Контейнер */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+/* Фон баннера */
+.hero-banner-image {
+    background: url('yacht-background.png') center/cover no-repeat;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Затемнение */
+.hero-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+
+.social-icons-new {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5; /* Лёгкий фон для иконок */
+    transition: 0.3s;
+}
+
+.social-link i {
+    color: #555; /* Цвет иконки по умолчанию */
+}
+
+/* Цвета для соцсетей */
+.whatsapp {
+    background-color: #25D366;
+}
+.whatsapp i {
+    color: #fff;
+}
+
+.telegram {
+    background-color: #0088cc;
+}
+.telegram i {
+    color: #fff;
+}
+
+.phone {
+    background-color: #000;
+}
+.phone i {
+    color: #fff;
+}
+
+/* ВКонтакте – ярко-синий цвет */
+.vk {
+    background-color: #0077FF; /* Яркий синий фон */
+}
+.vk i {
+    color: #fff; /* Белая иконка */
+}
+
+/* Эффект при наведении */
+.social-link:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Заголовок */
+.hero-banner-title {
+    font-family: 'Montserrat', sans-serif; /* Новый шрифт для читаемости */
+    font-size: 2.2rem; /* Уменьшен */
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+    line-height: 1.3;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 22%; /* Чуть выше */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    color: white;
+}
+
+/* Подзаголовок */
+.hero-banner-subtitle {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3rem; /* Сделал компактнее */
+    font-weight: 400;
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.5;
+    position: absolute;
+    bottom: 35px; /* Опустил ниже */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Чисто белый */
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .hero-banner-image {
+        height: 320px;
+    }
+
+    .hero-banner-title {
+        font-size: 1.9rem;
+        top: 18%;
+    }
+
+    .hero-banner-subtitle {
+        font-size: 1.1rem;
+        bottom: 25px;
+    }
+}
+
+
+
+
+.catalog-photo {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.catalog-photo.active {
+    display: block;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+
+.contact-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.advantage-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.advantage-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .nav-menu, .social-icons.desktop {
+        display: none;
+    }
+
+    .hero-image {
+        height: 350px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .advantages {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .advantage-card {
+        width: 30%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .mobile-controls {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .social-icons.mobile {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .advantages {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .advantage-card {
+        padding: 1rem;
+    }
+
+    .advantage-card i {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .advantage-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .advantage-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .social-icons.mobile {
+        display: none;
+    }
+}
+
+
+/* Блок "О нас" */
+.about {
+padding: 80px 0;
+background: #fff;
+color: #333;
+}
+
+.about-content {
+text-align: center;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.about h2 {
+font-size: 36px;
+margin-bottom: 20px;
+color: #222;
+animation: fadeInDown 1s ease;
+}
+
+.about .subtitle {
+font-size: 20px;
+color: #555;
+margin-bottom: 30px;
+animation: fadeIn 1.5s ease;
+}
+
+.about .description {
+font-size: 16px;
+line-height: 1.8;
+color: #666;
+margin-bottom: 40px;
+animation: fadeIn 2s ease;
+}
+
+.features {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;
+margin-bottom: 40px;
+}
+
+.feature-item {
+flex: 1 1 200px;
+max-width: 250px;
+padding: 20px;
+background: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+animation: fadeInUp 1s ease;
+}
+
+.feature-item:hover {
+transform: translateY(-10px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-item i {
+font-size: 32px;
+color: #ffcc00;
+margin-bottom: 15px;
+display: block;
+}
+
+.feature-item p {
+font-size: 16px;
+color: #444;
+margin: 0;
+}
+
+.hashtags {
+font-size: 14px;
+color: #777;
+animation: fadeIn 2.5s ease;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+
+@keyframes fadeInDown {
+from {
+opacity: 0;
+transform: translateY(-20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+
+@media (max-width: 768px) {
+.features {
+flex-direction: column;
+align-items: center;
+}
+
+.feature-item {
+max-width: 100%;
+}
+}
+
+
+
+/* Секция "Каталог" */
+.catalog {
+padding: 40px 20px;
+background: #f9f9f9; /* Светлый фон */
+}
+
+.catalog-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.catalog-header h2 {
+font-size: 24px;
+font-weight: bold;
+color: #222;
+}
+
+.view-all {
+font-size: 16px;
+color: #222;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.view-all i {
+font-size: 14px;
+}
+
+/* Подзаголовок */
+.catalog-subtitle {
+font-size: 16px;
+color: #555;
+margin-bottom: 20px;
+}
+
+/* Список карточек */
+.catalog-list {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+/* Карточка */
+.catalog-item {
+background: white;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Блок с изображением */
+.catalog-image {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Ограничиваем высоту */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.catalog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Убираем растягивание и вписываем картинку */
+    object-position: center;
+}
+
+/* Обновленный стиль для тегов */
+/* Стиль для "кол-ва чел." */
+.catalog-tag,
+.catalog-hit {
+    position: absolute;
+    top: 10px;
+    background: white;
+    color: black;
+    font-size: 12px; /* Уменьшен размер шрифта */
+    font-weight: 400; /* Нормальная толщина шрифта */
+    padding: 4px 12px; /* Уменьшенные отступы */
+    border-radius: 14px; /* Более мягкие скругления */
+    text-transform: uppercase;
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+}
+
+.catalog-tag {
+    left: 10px;
+}
+
+.catalog-hit {
+    right: 10px;
+}
+
+/* Стиль для цифр */
+.catalog-tag b,
+.catalog-hit b {
+    font-weight: 600; /* Полужирные цифры */
+    font-size: 13px; /* Чуть крупнее цифры */
+}
+
+/* Убраны все эффекты границ и теней */
+.catalog-tag:hover,
+.catalog-hit:hover {
+    background: white; /* Отключен hover-эффект */
+    color: black;
+}
+
+/* Контейнер информации */
+.catalog-info {
+    display: flex;
+    padding: 25px 20px; /* Увеличил верхний и нижний отступ */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Увеличил расстояние между элементами */
+}
+
+.catalog-info h3,
+.catalog-price {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+}
+
+.catalog-info h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+    flex: 1;
+    text-align: left;
+}
+
+.catalog-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+    white-space: nowrap; /* Запрещает разрыв ₽/час */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.catalog-price span {
+font-size: 22px;
+color: black;
+}
+
+/* Кнопки */
+.catalog-buttons {
+    display: flex;
+    justify-content: center; /* Центрируем кнопки */
+    align-items: center;
+    width: 100%; /* Растягиваем контейнер кнопок */
+    gap: 20px; /* Делаем расстояние между кнопками */
+}
+
+.btn-details,
+.btn-rent {
+flex: 1;
+text-align: center;
+padding: 10px;
+border-radius: 5px;
+font-size: 16px;
+font-weight: bold;
+text-decoration: none;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 5px;
+}
+
+/* Кнопка "Подробнее" */
+.btn-details {
+    background: white;
+    color: black;
+    font-weight: 500; /* Уменьшили жирность текста */
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    border-radius: 18px;
+    border: 1.5px solid black;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 1.5px 5px rgba(0, 0, 0, 0.2);
+    width: 150px; /* Сделал фиксированную ширину для ровности */
+    text-align: center;
+}
+
+/* Эффект при наведении */
+.btn-details:hover {
+    background: linear-gradient(119deg, rgba(229,249,54,1) 0%, rgba(222,226,206,1) 100%);
+    transform: scale(1.05);
+    box-shadow: 0px 3px 8px rgba(229, 249, 54, 0.5);
+    border-color: black;
+}
+
+/* Кнопка "Арендовать" */
+.btn-rent {
+    background: rgb(230,255,10);
+    background: linear-gradient(119deg, rgba(230,255,10,1) 40%, rgba(200,223,108,1) 84%);
+    color: black;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 2px 6px rgba(200, 223, 108, 0.4);
+    width: 150px; /* Сделал фиксированную ширину для симметрии */
+    text-align: center;
+}
+
+/* Эффект при наведении */
+.btn-rent:hover {
+    background: linear-gradient(119deg, rgba(200,223,108,1) 40%, rgba(230,255,10,1) 84%);
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(230, 255, 10, 0.6);
+}
+
+/* Блок характеристик в одну линию */
+/* Общий контейнер характеристик */
+/* Блок "На борту" */
+.catalog-features {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px; /* Отступы между элементами */
+    font-size: 14px;
+    color: #333;
+    justify-content: flex-start; /* Выравниваем влево */
+    margin-top: 10px; /* Отступ сверху, чтобы он шел сразу под кнопками */
+}
+
+/* Заголовок "На борту:" */
+.features-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #222;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+/* Элементы в одной линии */
+.catalog-features span {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Расстояние между иконкой и текстом */
+    font-weight: 500;
+    white-space: nowrap; /* Запрещает перенос текста */
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .catalog-features {
+        gap: 8px;
+        font-size: 13px;
+    }
+}
+
+/* Адаптация */
+@media (min-width: 768px) {
+.catalog-list {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+}
+}
+
+@media (min-width: 1024px) {
+.catalog {
+padding: 60px 80px;
+}
+
+.catalog-header h2 {
+font-size: 28px;
+}
+
+.catalog-list {
+grid-template-columns: repeat(3, 1fr);
+}
+}
+
+/* Затемняющий фон */
+.popup-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+backdrop-filter: blur(5px);
+z-index: 998;
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.3s ease;
+}
+
+/* Активное состояние подложки */
+.popup-overlay.active {
+opacity: 1;
+visibility: visible;
+}
+
+/* Всплывающее окно бронирования */
+.booking-popup {
+position: fixed;
+top: 50%;
+left: 50%;
+width: 90%;
+max-width: 400px;
+background: white;
+border-radius: 15px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+transform: translate(-50%, -50%);
+z-index: 999;
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.3s ease, transform 0.3s ease;
+padding: 20px;
+text-align: center;
+}
+
+/* Активное состояние окна */
+.booking-popup.active {
+opacity: 1;
+visibility: visible;
+}
+
+/* Кнопка закрытия */
+.booking-close {
+position: absolute;
+top: 10px;
+right: 15px;
+background: none;
+border: none;
+font-size: 18px;
+cursor: pointer;
+}
+
+/* Заголовок */
+.booking-popup h2 {
+font-size: 22px;
+font-weight: bold;
+}
+
+/* Фото яхты */
+/* Фото яхты в модальном окне */
+.booking-image img {
+    width: 90%; /* Делаем фото шире */
+    max-width: 280px; /* Немного увеличиваем максимальный размер */
+    height: auto; /* Поддерживаем пропорции */
+    aspect-ratio: 16 / 9; /* Соотношение сторон, чтобы картинка была более растянутой */
+    display: block;
+    margin: 10px auto; /* Центрирование */
+    object-fit: cover; /* Обрезаем лишнее, чтобы сохранить пропорции */
+    object-position: center;
+    border-radius: 10px;
+}
+
+/* Название яхты */
+.booking-popup h3 {
+font-size: 20px;
+font-weight: bold;
+margin: 10px 0;
+}
+
+/* Поля формы */
+.booking-inputs {
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-bottom: 15px;
+}
+
+.booking-inputs input,
+.booking-inputs textarea {
+width: 100%;
+padding: 10px;
+border-radius: 8px;
+border: 1px solid #ddd;
+font-size: 14px;
+background: #f5f5f5;
+}
+
+/* Чекбокс */
+.booking-checkbox {
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 14px;
+margin-bottom: 15px;
+}
+
+.booking-checkbox input {
+width: 16px;
+height: 16px;
+}
+
+/* Кнопка отправки */
+#submit-btn {
+width: 100%;
+padding: 12px;
+border: none;
+border-radius: 8px;
+font-size: 16px;
+font-weight: bold;
+background: #ddd;
+color: white;
+cursor: not-allowed;
+transition: background 0.3s;
+}
+
+/* Активная кнопка */
+#submit-btn.active {
+background: #ffd700;
+color: black;
+cursor: pointer;
+}
+
+/* Адаптация */
+@media (max-width: 768px) {
+.booking-popup {
+width: 90%;
+}
+}
+
+
+
+/* Кнопка во время загрузки */
+#submit-btn.loading {
+    background: #ccc !important;
+    color: #888 !important;
+    cursor: not-allowed;
+}
+
+
+
+/* Секция "Отзывы" */
+.reviews {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.reviews-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Контейнер слайдера */
+.reviews-slider {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Контейнер с отзывами */
+.reviews-container {
+    display: flex;
+    gap: 20px;
+    scroll-snap-type: x mandatory; /* Фиксация на отзывах */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Стили отзывов */
+.review {
+    flex: 0 0 320px; /* Размер отзыва (фиксированный) */
+    max-width: 320px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    scroll-snap-align: center; /* Фиксация отзывов */
+}
+
+/* Текст отзыва */
+.review-comment {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.review-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #222;
+    text-align: right;
+}
+
+/* Звездный рейтинг */
+.review-rating {
+    font-size: 20px;
+    color: #ffd700; /* Желтые звезды */
+    text-align: right;
+}
+
+/* Убираем скроллбар */
+.reviews-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Адаптация */
+@media (max-width: 768px) {
+    .reviews-slider {
+        max-width: 100%;
+    }
+
+    .review {
+        flex: 0 0 80%; /* Делаем шире на телефонах */
+        max-width: 80%;
+    }
+}
+
+
+
+
+
+
+
+/* 222222 */
+
+/* Кнопка "Назад" */
+.return-button {
+    display: inline-block;
+    margin: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Основной контейнер */
+.yacht-wrapper {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Главное изображение яхты */
+.yacht-main-photo img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Галерея */
+.yacht-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.gallery-thumbs {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    max-width: 250px;
+}
+
+.gallery-thumb {
+    width: 70px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-thumb:hover {
+    transform: scale(1.1);
+}
+
+.gallery-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Название яхты */
+.yacht-heading {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Детали яхты */
+.yacht-specs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.spec-box {
+    background: #e5e5e5;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Удобства */
+.yacht-info-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.yacht-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.yacht-features span {
+    background: #f3f3f3;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Цены */
+.yacht-price-block {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.price-box {
+    background: #e5e5e5;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.price-box.selected {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Кнопка аренды */
+.yacht-book-btn {
+    display: block;
+    width: 90%;
+    max-width: 300px;
+    margin: 10px auto;
+    background: linear-gradient(to right, #6ec1e4, #61b3d7);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Локация */
+.yacht-dock {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+
+
+
+.catalog-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+    margin-top: 70px; /* Отступ вниз от меню */
+    background: #5a3e1b;
+    border-bottom: 3px solid #d4af37;
+}
+
+.filter-btn {
+    background: linear-gradient(45deg, #d4af37, #b8860b);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover {
+    background: linear-gradient(45deg, #b8860b, #d4af37);
+    transform: scale(1.05);
+}
+
+.filter-btn.active {
+    background: #8b5e34;
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #2d1b0c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.company-footer {
+    background: #f8f9fa;
+    padding: 40px 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-brand {
+    margin-bottom: 25px;
+}
+
+.logo-text {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #2c3e50;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.company-description {
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+.locations {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #34495e;
+}
+
+.separator {
+    color: #bdc3c7;
+    margin: 0 5px;
+}
+
+/* Новые стили для социальных иконок */
+.social-icons-new {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-link.whatsapp { background: #25D366; }
+.social-link.telegram { background: #0088cc; }
+.social-link.phone { background: #2ecc71; }
+
+.social-link i {
+    color: white;
+    font-size: 1.2em;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Стили для политики */
+.footer-legal {
+    margin-top: 25px;
+    font-size: 0.85em;
+}
+
+.privacy-link {
+    color: #7f8c8d;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.privacy-link:hover {
+    color: #3498db;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 1.8em;
+    }
+    
+    .social-icons-new {
+        gap: 15px;
+        margin: 25px 0;
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+
+
+.catalog-item {
+    display: flex;
+    flex-direction: column;
+    background: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.catalog-item:hover {
+    transform: scale(1.02);
+}
+
+.catalog-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+/* Стрелки */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: background 0.3s ease;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
