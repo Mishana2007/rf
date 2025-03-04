@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Аренда яхт</title>
+    <meta name="description" content="Аренда премиальных яхт в Санкт-Петербурге. Прогулки по Неве и Финскому заливу. Лучшие модели яхт в каталоге с фото и ценами. Бронирование онлайн.">
+    <meta name="keywords" content="аренда яхт, яхты СПб, аренда яхты Санкт-Петербург, прогулочные яхты, каталог яхт">
+    <link rel="canonical" href="https://breezespb.ru.ru/">
+
+    <meta name="google-site-verification" content="google-site-verification=AP3MDoKiEoX3zxrtsJWvNxIXtoBUY3SUzGmb50oETEc" />
+
+<!-- Яндекс.Вебмастер -->
+<meta name="yandex-verification" content="9522737a078423d3" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Каталог - Аренда премиальных яхт в Санкт-Петербурге">
+    <meta property="og:description" content="Большой выбор прогулочных яхт для аренды по выгодным ценам. Лучшие маршруты по СПб.">
+    <meta property="og:image" content="https://breezespb.ru.ru/images/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://breezespb.ru.ru/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Каталог - Аренда яхт в Санкт-Петербурге">
+    <meta name="twitter:description" content="Аренда премиальных яхт для прогулок по Неве и Финскому заливу">
+    <meta name="twitter:image" content="https://breezespb.ru.ru/images/twitter-image.jpg">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BREEZE</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Главный экран</a></li>               
+                <li><a href="catalog.html">Каталог яхт</a></li>
+                <li><a href="index.html#reviews">Отзывы</a></li> <!-- Ссылка на секцию с отзывами -->
+                <li><a href="index.html#contacts">Контакты</a></li> <!-- Ссылка на секцию с контактами -->
+            </ul>
+
+            <div class="social-icons desktop">
+                <a href="https://wa.me/+79313788909" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/rtemrokovs" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="tel:+79313788909" aria-label="Позвонить"><i class="fas fa-phone"></i></a>
+            </div>
+
+            <div class="mobile-controls">
+                <div class="social-icons mobile">
+                    <a href="https://wa.me/+79313788909" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/rtemrokovs" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="tel:+79313788909" aria-label="Позвонить"><i class="fas fa-phone"></i></a>
+                </div>
+                <button class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <li><a href="index.html">Главный экран</a></li>               
+            <li><a href="catalog.html">Каталог яхт</a></li>
+            <li><a href="index.html#reviews">Отзывы</a></li> <!-- Ссылка на секцию с отзывами -->
+            <li><a href="index.html#contacts">Контакты</a></li> <!-- Ссылка на секцию с контактами -->
+        </div>
+        <button class="close-menu" id="close-menu">✖</button>
+    </div>
+
+    <section class="catalog">
+        <div class="catalog-header">
+            <h2>АРЕНДА ЯХТ</h2>
+            <!-- <a href="#" class="view-all">Все яхты <i class="fas fa-arrow-right"></i></a> -->
+        </div>
+        <p class="catalog-subtitle">Большой выбор прогулочных яхт для аренды по выгодным ценам. Лучшие маршруты по СПб.</p>
+
+        <div class="catalog-list">
+            <!-- Яхта 1 -->
+            <div class="catalog-item">
+                <div class="catalog-image">
+                    <img src="yacht-hecmes.png" alt="Катер Blueberry">
+                    <div class="catalog-tag">12 чел.</div>
+                    <div class="catalog-hit">19 м</div>
+                </div>
+                <div class="catalog-info">
+                    <h3>HERMES</h3>
+                    <p class="catalog-price"><span>30000</span> ₽/час</p>
+                    <div class="catalog-buttons">
+                        <a href="HERMES.html?yacht=blueberry" class="btn-details">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-rent">Арендовать <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="catalog-features">
+                        <span>🎵 Музыка: Bluetooth + сабвуфер</span>
+                        <span>🛏️ Каюты с обогревом</span>
+                        <span>⛱️ Флайбридж + зона загара</span>
+                        <span>❄️ Холодильник + лед</span>
+                        <span>🍳 Гриль, плита (по запросу)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Яхта 2 -->
+            <div class="catalog-item">
+                <div class="catalog-image">
+                    <img src="ECLIPSE.png" alt="Катер Redwood">
+                    <div class="catalog-tag">10 чел.</div>
+                    <div class="catalog-hit">16 м</div>
+                </div>
+                <div class="catalog-info">
+                    <h3>ECLIPSE</h3>
+                    <p class="catalog-price"><span>15000</span> ₽/час</p>
+                    <div class="catalog-buttons">
+                        <a href="ECLIPSE.html" class="btn-details">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-rent">Арендовать <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="catalog-features">
+                        <span>🛏️ 3 каюты</span>
+                        <span>⛱️ Флайбридж + зона загара</span>
+                        <span>🎵 Музыка: колонки + Bluetooth</span>
+                        <span>🍽️ Посуда, бокалы, штопор</span>
+                        <span>🔥 Обогрев, пледы</span>
+                        <span>🚻 2 туалета, 2 душа</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Яхта 3 (новая!) -->
+            <div class="catalog-item">
+                <div class="catalog-image">
+                    <img src="VELVETTE1.png" alt="Катер Black Pearl">
+                    <div class="catalog-tag">7 чел.</div>
+                    <div class="catalog-hit">10 м</div>
+                </div>
+                <div class="catalog-info">
+                    <h3> Катер Velvette</h3>
+                    <p class="catalog-price"><span>8000</span> ₽/час</p>
+                    <div class="catalog-buttons">
+                        <a href="Velvette.html?yacht=blackpearl" class="btn-details">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-rent">Арендовать <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="catalog-features">
+                        <span>🎵 Hi-End аудиосистема</span>
+                        <span>🍷 Мини-бар</span>
+                        <span>🌊 Панорамный вид</span>
+                        <span>⛱️ Тент</span>
+                        <span>🚻 Туалет</span>
+                        <span>🥂 Бокалы и посуда</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Всплывающее окно бронирования -->
+        <div class="booking-popup" id="booking-popup">
+            <div class="booking-content">
+                <button class="booking-close" id="booking-close">✖</button>
+                <h2>ОФОРМИТЬ</h2>
+                <div class="booking-image">
+                    <img src="" alt="Яхта" id="booking-boat-img">
+                </div>
+                <h3 id="booking-boat-name">Название яхты</h3>
+
+                <form id="booking-form">
+                    <div class="booking-inputs">
+                        <input type="text" id="name" placeholder="Иван" required>
+                        <input type="tel" id="phone" placeholder="+79819999919" required>
+                        <textarea id="comment" placeholder="Берем на 5 человек"></textarea>
+                    </div>
+                    <div class="booking-checkbox">
+                        <input type="checkbox" id="policy">
+                        <label for="policy">Согласен с политикой конфиденциальности</label>
+                    </div>
+                    <button type="submit" id="submit-btn" disabled>Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Затемняющий фон -->
+        <div class="popup-overlay" id="popup-overlay"></div>
+
+    </section>
+
+
+    <!-- Футер -->
+<footer class="company-footer">
+    <div class="footer-content">
+        <!-- Логотип -->
+        <div class="footer-brand">
+            <h2 class="logo-text">BREEZE</h2>
+            <p class="company-description">Судоходная компания BREEZE</p>
+        </div>
+
+        <!-- Локации -->
+        <div class="locations">
+            <div class="location-item">
+                <span class="city">Санкт-Петербург</span>
+            </div>
+        </div>
+        
+        <!-- Заголовок "Связаться с нами" -->
+        <p class="contact-title">Связаться с нами</p>
+        
+        <!-- Социальные иконки (новая версия) -->
+        <div class="social-icons-new">
+            <a href="https://wa.me/+79313788909" class="social-link whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://t.me/rtemrokov" class="social-link telegram" target="_blank">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="tel:+79313788909" class="social-link phone">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="https://vk.com/luxuryyachts" class="social-link vk" target="_blank">
+                <i class="fab fa-vk"></i>
+            </a>
+        </div>
+
+        <!-- Политика конфиденциальности -->
+        <div class="footer-legal">
+            <a href="./Политикаяхты.pdf" class="privacy-link" itemprop="url" target="_blank">
+                Политика конфиденциальности
+            </a>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        document.querySelectorAll('.thumbnails img').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                document.querySelector('.main-image').src = this.src;
+                document.querySelectorAll('.thumbnails img').forEach(img => img.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Скрипт для мобильного меню
+        const menuBtn = document.querySelector(".menu-btn");
+        const closeMenu = document.querySelector("#close-menu");
+        const mobileMenu = document.querySelector("#mobile-menu");
+        const overlay = document.querySelector("#overlay");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.add("open");
+            overlay.style.display = "block";
+        });
+
+        closeMenu.addEventListener("click", () => {
+            mobileMenu.classList.remove("open");
+            overlay.style.display = "none";
+        });
+
+        overlay.addEventListener("click", () => {
+            mobileMenu.classList.remove("open");
+            overlay.style.display = "none";
+        });
+
+        
+    </script>
+    <script src="script.js"></script>
+
+
+
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+                body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            background: #f9f9f9;
+            padding: 10px; /* Убираем лишний padding */
+        }
+        
+                .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px 20px;
+        }
+        
+        .yacht-container {
+            margin-top: 80px; /* Отступ, равный высоте меню */
+        }
+                .breadcrumbs {
+                    margin-bottom: 20px;
+                    font-size: 0.9em;
+                    color: #666;
+                }
+        
+                .breadcrumbs a {
+                    color: #0066cc;
+                    text-decoration: none;
+                }
+        
+                .main-gallery {
+                    position: relative;
+                    margin-bottom: 30px;
+                }
+        
+                .main-image {
+                    width: 100%;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                }
+        
+                .thumbnails {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 10px;
+                    gap: 10px;
+                }
+        
+                .thumbnails img {
+                    width: 80px;
+                    height: 60px;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    border: 2px solid transparent;
+                }
+        
+                .thumbnails img.active {
+                    border-color: #009688;
+                }
+        
+                .yacht-title-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    margin-top: 20px;
+                }
+        
+                .yacht-title {
+                    font-size: 28px;
+                    color: #1a1a1a;
+                    margin: 0;
+                }
+        
+                .yacht-specs {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end; /* Сдвиг в правую сторону */
+        }
+        
+        .spec-tag {
+            background: linear-gradient(-45deg, #b8860b, #d4af37, #e8c86d, #b8860b);
+            background-size: 300% 300%;
+            color: white;
+            padding: 8px 18px; /* Чуть больше */
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.5s ease-in-out;
+            animation: waterFlow 4s infinite linear; /* Длинный цикл для плавности */
+        }
+        
+        @keyframes waterFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+                .section-title {
+                    font-size: 20px;
+                    color: #1a1a1a;
+                    border-bottom: 2px solid #eee;
+                    padding-bottom: 10px;
+                    margin: 25px 0;
+                }
+        
+                .amenities-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 12px;
+                    margin-bottom: 30px;
+                }
+        
+                .amenity {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 15px;
+                }
+        
+                .amenity i {
+                    color: #009688;
+                }
+        
+                .price-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+            flex-wrap: nowrap;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .price-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px; /* Ещё больше увеличили отступы */
+            border-radius: 45px; /* Закругление сохранили */
+            font-size: 20px; /* Увеличили шрифт */
+            font-weight: bold;
+            text-align: center;
+            min-width: 180px; /* Сделали шире */
+        }
+        
+        .price-weekday {
+            background: #f5f2e9;
+            color: #5c5c5c;
+            border: 2px solid #ddd5b9;
+            padding: 10px 20px; /* Увеличенные отступы */
+            border-radius: 45px;
+        }
+        
+        /* ПТ-ВС (золотистый градиент) */
+        .price-weekend {
+            background: linear-gradient(45deg, #b8860b, #d4af37);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 45px;
+            transition: background 0.3s ease-in-out;
+        }
+        
+        .price-inner {
+            background: white;
+            padding: 8px 18px; /* Сделали ещё больше */
+            border-radius: 60px;
+            font-size: 22px; /* Ещё больше увеличили шрифт */
+            font-weight: bold;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .price-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        
+                /* Стили кнопки "Арендовать" */
+                .cta-button {
+            width: 100%;
+            padding: 16px 22px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #000;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            background: linear-gradient(74deg, rgba(154,242,207,1) 12%, rgba(60,214,246,1) 93%);
+            background-size: 200% 200%;
+            animation: softGlow 3s infinite alternate;
+            box-shadow: 0 4px 10px rgba(60, 214, 246, 0.4);
+        }
+        
+        /* Эффект наведения */
+        .cta-button:hover {
+            background: linear-gradient(74deg, rgba(60,214,246,1) 12%, rgba(154,242,207,1) 93%);
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(60, 214, 246, 0.5);
+        }
+        
+        /* Анимация мягкого сияния */
+        @keyframes softGlow {
+            0% {
+                box-shadow: 0 4px 10px rgba(60, 214, 246, 0.3);
+            }
+            100% {
+                box-shadow: 0 6px 15px rgba(154, 242, 207, 0.5);
+            }
+        }
+        
+        /* Эффект нажатия */
+        .cta-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+                .location {
+                    margin-top: 25px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: #666;
+                    font-size: 15px;
+                    justify-content: center;
+                }
+        
+        
+                /* Блок описания яхты */
+        .yacht-description {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .yacht-description h2 {
+            font-size: 24px;
+            color: #b8860b;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .yacht-description p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+            text-align: justify;
+        }
+        
+        /* Блок тарифов */
+        .tariff-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tariff-section h2 {
+            font-size: 24px;
+            color: #b8860b;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        /* Стиль для каждого сезона */
+        .tariff-box {
+            margin-bottom: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tariff-header {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+        
+        /* Цвета для сезонов */
+        .low-season .tariff-header {
+            background: linear-gradient(45deg, #d4af37, #e1c16e);
+        }
+        
+        .high-season .tariff-header {
+            background: linear-gradient(45deg, #b8860b, #d4af37);
+        }
+        
+        /* Таблица цен */
+        .tariff-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .tariff-table th, .tariff-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        .tariff-table th {
+            background: #f9f9f9;
+            font-weight: bold;
+        }
+        
+        /* Мобильная адаптация */
+        @media (max-width: 768px) {
+            .tariff-table th, .tariff-table td {
+                font-size: 14px;
+                padding: 10px;
+            }
+        
+            .tariff-header {
+                font-size: 18px;
+            }
+        
+            .price-box {
+                font-size: 12px;
+                padding: 4px 8px;
+                min-width: 100px;
+                border-radius: 29px; /* Чуть сильнее закруглили */
+            }
+        
+            .price-inner {
+                font-size: 13px;
+                padding: 3px 8px;
+                border-radius: 41px; /* Чуть сильнее закруглили */
+            }
+        }
+        
+        
+        /* Стили для футера */
+        .company-footer {
+            background: #f8f9fa;
+            padding: 40px 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-brand {
+            margin-bottom: 25px;
+        }
+        
+        .logo-text {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #2c3e50;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+        
+        .company-description {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .locations {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .location-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #34495e;
+        }
+        
+        .separator {
+            color: #bdc3c7;
+            margin: 0 5px;
+        }
+        
+        /* Новые стили для социальных иконок */
+        .social-icons-new {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        
+        .social-icons-new {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .social-link {
+            font-size: 24px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f5f5f5; /* Лёгкий фон для иконок */
+            transition: 0.3s;
+        }
+        
+        .social-link i {
+            color: #555; /* Цвет иконки по умолчанию */
+        }
+        
+        /* Цвета для соцсетей */
+        .whatsapp {
+            background-color: #25D366;
+        }
+        .whatsapp i {
+            color: #fff;
+        }
+        
+        .telegram {
+            background-color: #0088cc;
+        }
+        .telegram i {
+            color: #fff;
+        }
+        
+        .phone {
+            background-color: #000;
+        }
+        .phone i {
+            color: #fff;
+        }
+        
+        /* ВКонтакте – ярко-синий цвет */
+        .vk {
+            background-color: #0077FF; /* Яркий синий фон */
+        }
+        .vk i {
+            color: #fff; /* Белая иконка */
+        }
+        
+        /* Эффект при наведении */
+        .social-link:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link.whatsapp { background: #25D366; }
+        .social-link.telegram { background: #0088cc; }
+        .social-link.phone { background: #2ecc71; }
+        
+        .social-link i {
+            color: white;
+            font-size: 1.2em;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Стили для политики */
+        .footer-legal {
+            margin-top: 25px;
+            font-size: 0.85em;
+        }
+        
+        .privacy-link {
+            color: #7f8c8d;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .privacy-link:hover {
+            color: #3498db;
+        }
+        
+        /* Мобильная адаптация */
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.8em;
+            }
+            
+            .social-icons-new {
+                gap: 15px;
+                margin: 25px 0;
+            }
+            
+            .social-link {
+                width: 40px;
+                height: 40px;
+            }
+        }
+            </style>
+</body>
+</html>
